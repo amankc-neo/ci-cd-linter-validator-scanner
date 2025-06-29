@@ -100,3 +100,14 @@ You can reuse the action with:
 
 ## 🧩 Extending
 - Want to write your own rules? Just drop a new .rego file in policies/custom/ and you’re good to go.
+
+---
+
+## Terms of Use
+
+- This repository is open for educational and reference purposes.  
+- You are free to explore, copy, and adapt the ideas and structure.  
+- No warranty or support is provided.
+
+---
+
