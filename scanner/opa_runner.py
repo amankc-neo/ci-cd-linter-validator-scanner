@@ -1,5 +1,3 @@
-# scanner/opa_runner.py
-
 import json
 import subprocess
 import os
