@@ -17,11 +17,6 @@ This tool acts as a pre-merge gatekeeper for CI/CD pipeline definitions (like Gi
 ---
 
 ## 📁 Repository Structure
-
-![image](https://github.com/user-attachments/assets/cddb8a63-6c4a-4c87-85ca-7b6056ea52b7)
-
-
-
 **Repo Breakdown:**
 
 - `scanner/`: Python CLI for YAML linting and OPA policy evaluation.
