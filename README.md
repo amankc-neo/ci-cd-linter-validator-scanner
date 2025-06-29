@@ -19,32 +19,27 @@ This tool acts as a pre-merge gatekeeper for CI/CD pipeline definitions (like Gi
 ## 📁 Repository Structure
 
 ci-cd-linter-validator-scanner/
-├── scanner/ # Core Python CLI logic (linting + OPA execution)
+├── scanner/
 │ ├── init.py
-│ ├── linter.py # YAML anti-pattern checker
-│ ├── opa_runner.py # Runs OPA with Rego policies
-│ └── utils.py # Common utilities
-│
-├── policies/ # OPA policy files (Rego)
-│ ├── base/ # General rules
-│ ├── strict/ # Optional strict rules
-│ └── custom/ # Placeholder for org/team rules
-│
-├── examples/ # Good vs bad workflow examples
+│ ├── linter.py
+│ ├── opa_runner.py
+│ └── utils.py
+├── policies/
+│ ├── base/
+│ ├── strict/
+│ └── custom/
+├── examples/
 │ ├── good_workflow.yml
 │ └── bad_workflow.yml
-│
 ├── .github/
 │ └── workflows/
-│ └── validate.yml # GitHub Action to run the linter+validator
-│
-├── tests/ # Unit and integration tests
+│ └── validate.yml
+├── tests/
 │ ├── test_linter.py
 │ └── test_opa_runner.py
-│
-├── action.yml # (Optional) GitHub Reusable Action definition
-├── requirements.txt # Python dependencies
-├── README.md # Project overview and usage
+├── action.yml
+├── requirements.txt
+├── README.md
 └── LICENSE
 
 **Legend:**
