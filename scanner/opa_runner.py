@@ -5,7 +5,7 @@ import subprocess
 import os
 import tempfile
 
-OPA_POLICY_DIR = "policies/base"
+OPA_POLICY_DIR = ["policies/base", "policies/strict", "policies/custom"]
 
 def evaluate_with_opa(yaml_data):
     violations = []
