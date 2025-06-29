@@ -99,7 +99,36 @@ You can reuse the action with:
 ---
 
 ## 🧩 Extending
+
 - Want to write your own rules? Just drop a new .rego file in policies/custom/ and you’re good to go.
+
+#### 🔧 Extending the Policy Engine
+
+You can add your own `.rego` rules to the `policies/custom/` folder:
+
+1. Create a new file:  
+   `policies/custom/enforce-checkout-pin.rego`
+
+2. Follow this format:
+
+```rego
+package ci_cdpipeline
+
+deny[msg] {
+  input.jobs["build"].steps[_].uses == "actions/checkout@master"
+  msg := "Avoid using unpinned or branch-based actions like 'checkout@master'"
+}
+```
+
+- That’s it! No registration needed — the engine auto-loads everything.
+
+---
+
+## 🧠 Optional Enhancements
+
+- Add CLI args (`--strict`, `--custom-only`) to control rule loading
+- Add `.ci-cd-scan-config.json` for advanced config
+- Add tagging (`type = "security"`) inside Rego for categorization
 
 ---
 
