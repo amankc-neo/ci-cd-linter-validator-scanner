@@ -14,3 +14,5 @@ test_latest_tag_violation {
   result := deny[_]
   result == "Step 'actions/setup-node@latest' uses an unpinned version ':latest'. Use a specific tag or SHA instead."
 }
+
+# opa test policies/base/
