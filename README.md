@@ -36,11 +36,6 @@ This tool acts as a pre-merge gatekeeper for CI/CD pipeline definitions (like Gi
 
 ---
 
-
-See [Project Structure](#) for full breakdown.
-
----
-
 ## ⚙️ Features
 
 - 🔒 Rego-based policy enforcement (OPA)
