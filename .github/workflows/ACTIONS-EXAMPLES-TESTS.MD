@@ -93,3 +93,46 @@ jobs:
         run: opa test policies/base/ || true
 ```
 ---
+
+```yaml
+name: "CI/CD YAML Linter and Policy Scanner"
+description: "Validates GitHub Actions workflows using Python linter and OPA policies"
+author: "Aman Choudhary"
+
+inputs:
+  target_file:
+    description: "Path to the YAML file to validate"
+    required: true
+  strict_mode:
+    description: "Enable strict rule set (policies/strict/)"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Python dependencies
+      run: pip install -r requirements.txt
+      shell: bash
+
+    - name: Install OPA CLI
+      run: |
+        curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+        chmod +x opa && sudo mv opa /usr/local/bin/
+      shell: bash
+
+    - name: Run validator
+      run: |
+        echo "🔍 Validating ${{ inputs.target_file }}"
+        python scanner/linter.py ${{ inputs.target_file }}
+      shell: bash
+```
+---
