@@ -1,6 +1,7 @@
 ### Add and run the below workflows to test and play with actions
 
 ---
+```yaml
   test:
     runs-on: ubuntu-latest
     name: Run Unit + Policy Tests
@@ -25,7 +26,7 @@
 
       - name: Run Rego policy tests
         run: opa test policies/base/
-
+```
 ---
 
 ```yaml
