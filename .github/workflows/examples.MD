@@ -28,6 +28,7 @@
 
 ---
 
+```yaml
 name: CI/CD YAML Validator & Policy Tester
 
 on:
@@ -89,5 +90,5 @@ jobs:
 
       - name: Run Rego policy tests (Non-blocking)
         run: opa test policies/base/ || true
-
+```
 ---
