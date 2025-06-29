@@ -65,7 +65,7 @@ python scanner/linter.py examples/bad_workflow.yml
 
 ## Policy Design
 
-- All policies are defined in Rego and organized in:
+### All policies are defined in Rego and organized in:
 
 - policies/base/: Core rules (secure-by-default)
 
