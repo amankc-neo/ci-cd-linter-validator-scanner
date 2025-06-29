@@ -1,5 +1,3 @@
-# scanner/linter.py
-
 import sys
 import yaml
 import os
